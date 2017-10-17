@@ -1,8 +1,8 @@
 #ifndef __GLOBALS_H__
 #define __GLOBALS_H__
 #define GENESIS_TIME_STAMP	"September 26, 2017, Alibaba Culture and Entertainment Group (Ali culture) announced the formal establishment of the game business group, under the open platform business and interactive entertainment division."
-#define DEFAULT_PORT 		22222
-#define DEFAULT_RPC_PORT	33333
+#define DEFAULT_PORT 		2222
+#define DEFAULT_RPC_PORT	3333
 #define GENESIS_BLOCK_TIME	1506425360
 #define GENESIS_BLOCK_NONCE	1526278	
 #define GENESIS_BLOCK_HASH	"0x0000085c71b5fad977230a1877ab0bdd7e6041b2c15246ecd336d8b8219913c1"
