@@ -246,14 +246,7 @@ bool CheckProofOfWork(uint256 hash, unsigned int nBits, const Consensus::Params&
     bool fNegative;
     bool fOverflow;
     arith_uint256 bnTarget;
-    CBlockIndex* pindexPrev = chainActive.Tip();
-    if(!(pindexPrev) ) {
-	bnTarget.SetCompact(nBits, &fNegative, &fOverflow);
-    } else if((pindexPrev->nHeight + 1) >= FORCE_MASTERNODE_PAYEE_BLOCKHEIGHT && (pindexPrev->nHeight + 1)<= (FORCE_MASTERNODE_PAYEE_BLOCKHEIGHT+FORK_15000_STEPS)) {
-	bnTarget.SetCompact(FORK_15000_NBITS/*nBits*/, &fNegative, &fOverflow);
-    } else {
-	bnTarget.SetCompact(nBits, &fNegative, &fOverflow);
-    }
+    bnTarget.SetCompact(nBits, &fNegative, &fOverflow);
     // Check range
     if (fNegative || bnTarget == 0 || fOverflow || bnTarget > UintToArith256(params.powLimit))
         return error("CheckProofOfWork(): nBits below minimum work");
